@@ -215,6 +215,9 @@ func parseFileServerSection(section *ini.Section) {
 	if key, err := section.GetKey("verify_client_blocks_after_sync"); err == nil {
 		VerifyClientBlocks, _ = key.Bool()
 	}
+	if key, err := section.GetKey("seahub_url"); err == nil {
+		SeahubURL = key.String()
+	}	
 }
 
 func parseQuota(quotaStr string) int64 {
